@@ -93,16 +93,16 @@ data "aws_iam_policy_document" "s3_replication" {
     condition {
       test     = "StringLike"
       variable = "kms:ViaService"
-      values   = [
+      values = [
         "s3.${data.aws_region.state.name}.amazonaws.com"
-        ]
+      ]
     }
     condition {
       test     = "StringLike"
       variable = "kms:EncryptionContext:aws:s3:arn"
-      values   = [
+      values = [
         "${aws_s3_bucket.state.arn}/*"
-        ]
+      ]
     }
   }
   statement {
@@ -116,16 +116,16 @@ data "aws_iam_policy_document" "s3_replication" {
     condition {
       test     = "StringLike"
       variable = "kms:ViaService"
-      values   = [
+      values = [
         "s3.${data.aws_region.replica[0].name}.amazonaws.com"
-        ]
+      ]
     }
     condition {
       test     = "StringLike"
       variable = "kms:EncryptionContext:aws:s3:arn"
-      values   = [
+      values = [
         "${aws_s3_bucket.replica[0].arn}/*"
-        ]
+      ]
     }
   }
 
