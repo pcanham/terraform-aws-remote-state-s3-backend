@@ -1,7 +1,7 @@
 # terraform-aws-remote-state-s3-backend
 
-[![Github Actions](https://github.com/nozaq/terraform-aws-remote-state-s3-backend/actions/workflows/main.yml/badge.svg)](https://github.com/nozaq/terraform-aws-remote-state-s3-backend/actions/workflows/main.yml)
-[![Releases](https://img.shields.io/github/v/release/nozaq/terraform-aws-remote-state-s3-backend)](https://github.com/nozaq/terraform-aws-remote-state-s3-backend/releases/latest)
+[![Github Actions](https://github.com/pcanham/terraform-aws-remote-state-s3-backend/actions/workflows/main.yml/badge.svg)](https://github.com/pcanham/terraform-aws-remote-state-s3-backend/actions/workflows/main.yml)
+[![Releases](https://img.shields.io/github/v/release/pcanham/terraform-aws-remote-state-s3-backend)](https://github.com/pcanham/terraform-aws-remote-state-s3-backend/releases/latest)
 
 [Terraform Module Registry](https://registry.terraform.io/modules/nozaq/remote-state-s3-backend/aws)
 
@@ -34,7 +34,7 @@ provider "aws" {
 }
 
 module "remote_state" {
-  source = "nozaq/remote-state-s3-backend/aws"
+  source = "github.com/pcanham/terraform-aws-remote-state-s3-backend"
 
   providers = {
     aws         = aws
