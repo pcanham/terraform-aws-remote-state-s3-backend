@@ -18,7 +18,7 @@ moved {
 }
 
 moved {
-  from = aws_s3_bucket_policy.replica_force_ssl
-  to   = aws_s3_bucket_policy.replica_force_ssl[0]
+  from = aws_s3_bucket_policy.replica_force_ssl_and_delete_protection
+  to   = aws_s3_bucket_policy.replica_force_ssl_and_delete_protection[0]
 }
 

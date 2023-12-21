@@ -150,7 +150,7 @@ resource "aws_iam_policy_attachment" "replication" {
   policy_arn = aws_iam_policy.replication[0].arn
 }
 
-data "aws_iam_policy_document" "replica_force_ssl" {
+data "aws_iam_policy_document" "replica_force_ssl_and_delete_protection" {
   count = var.enable_replication ? 1 : 0
 
   statement {
@@ -166,6 +166,18 @@ data "aws_iam_policy_document" "replica_force_ssl" {
       variable = "aws:SecureTransport"
       values   = ["false"]
     }
+    principals {
+      type        = "*"
+      identifiers = ["*"]
+    }
+  }
+  statement {
+    sid     = "DenyBucketDelete"
+    actions = ["s3:DeleteBucket"]
+    effect  = "Deny"
+    resources = [
+      aws_s3_bucket.replica[0].arn
+    ]
     principals {
       type        = "*"
       identifiers = ["*"]
@@ -269,7 +281,7 @@ resource "aws_s3_bucket_policy" "replica_force_ssl" {
   provider = aws.replica
 
   bucket = aws_s3_bucket.replica[0].id
-  policy = data.aws_iam_policy_document.replica_force_ssl[0].json
+  policy = data.aws_iam_policy_document.replica_force_ssl_and_delete_protection[0].json
 
   depends_on = [aws_s3_bucket_public_access_block.replica]
 }
