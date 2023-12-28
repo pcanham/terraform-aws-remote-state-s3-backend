@@ -1,3 +1,4 @@
+#trivy:ignore:AVD-DS-0026
 FROM mcr.microsoft.com/devcontainers/base:bullseye
 
 ARG USERNAME=vscode
