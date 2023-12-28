@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.0.1](https://github.com/pcanham/terraform-aws-remote-state-s3-backend/compare/v4.0.0...v4.0.1) (2023-12-28)
+
+
+### Bug Fixes
+
+* trivy complaining about health check ([#24](https://github.com/pcanham/terraform-aws-remote-state-s3-backend/issues/24)) ([43f071a](https://github.com/pcanham/terraform-aws-remote-state-s3-backend/commit/43f071a196fcf6ea35eabbf9f13fc599f4b8d7c2))
+
 ## [4.0.0](https://github.com/pcanham/terraform-aws-remote-state-s3-backend/compare/v3.0.0...v4.0.0) (2023-12-21)
 
 
