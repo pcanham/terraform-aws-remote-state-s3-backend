@@ -26,6 +26,12 @@ variable "terraform_iam_policy_name_prefix" {
   default     = "terraform"
 }
 
+variable "terraform_iam_policy_add_lockfile_permissions" {
+  description = "Whether to add permissions for the S3 lockfile (recommended for Terraform 1.11+)."
+  type        = bool
+  default     = false
+}
+
 #---------------------------------------------------------------------------------------------------
 # KMS Key for Encrypting S3 Buckets
 #---------------------------------------------------------------------------------------------------

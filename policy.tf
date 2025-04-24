@@ -19,10 +19,13 @@ data "aws_iam_policy_document" "terraform" {
   }
 
   statement {
-    actions = [
-      "s3:GetObject",
-      "s3:PutObject"
-    ]
+    actions = concat(
+      [
+        "s3:GetObject",
+        "s3:PutObject"
+      ],
+      var.terraform_iam_policy_add_lockfile_permissions ? ["s3:DeleteObject"] : []
+    )
     resources = ["${aws_s3_bucket.state.arn}/*"]
   }
 
