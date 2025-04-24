@@ -26,14 +26,17 @@ data "aws_iam_policy_document" "terraform" {
     resources = ["${aws_s3_bucket.state.arn}/*"]
   }
 
-  statement {
-    actions = [
-      "dynamodb:GetItem",
-      "dynamodb:PutItem",
-      "dynamodb:DeleteItem",
-      "dynamodb:DescribeTable"
-    ]
-    resources = [aws_dynamodb_table.lock[0].arn]
+  dynamic "statement" {
+    for_each = var.create_dynamodb_table ? [1] : []
+    content {
+      actions = [
+        "dynamodb:GetItem",
+        "dynamodb:PutItem",
+        "dynamodb:DeleteItem",
+        "dynamodb:DescribeTable"
+      ]
+      resources = [aws_dynamodb_table.lock[0].arn]
+    }
   }
 
   statement {

@@ -154,6 +154,12 @@ variable "s3_logging_target_prefix" {
 # DynamoDB Table for State Locking
 #---------------------------------------------------------------------------------------------------
 
+variable "create_dynamodb_table" {
+  description = "Whether or not to create the DynamoDB table for state locking (it's deprecated for Terraform 1.11+)."
+  type        = bool
+  default     = true
+}
+
 variable "dynamodb_table_name" {
   description = "The name of the DynamoDB table to use for state locking."
   type        = string
