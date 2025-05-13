@@ -7,7 +7,7 @@ on:
 jobs:
   pre-commit-checks:
     name: Pre-commit checks
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -21,7 +21,7 @@ jobs:
           terraform-docs-version: v0.20.0
   validate-examples:
     name: Validate examples
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     defaults:
       run:
         shell: bash
