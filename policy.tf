@@ -28,6 +28,13 @@ data "aws_iam_policy_document" "terraform" {
   statement {
     effect = "Allow"
     actions = [
+      "s3:DeleteObject",
+    ]
+    resources = ["${aws_s3_bucket.state.arn}/*.tflock"]
+  }
+  statement {
+    effect = "Allow"
+    actions = [
       "dynamodb:GetItem",
       "dynamodb:PutItem",
       "dynamodb:DeleteItem",
