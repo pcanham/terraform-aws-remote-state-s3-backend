@@ -23,8 +23,14 @@ jobs:
         uses: terraform-linters/setup-tflint@v4
         with:
           tflint_version: "v0.52.0"
-      - name: Render Terraform Docs and update README
-        uses: terraform-docs/gh-actions@v1.4.1
+      - name: Download terraform-docs Binary
+        run: |
+          # Download the precompiled binary for Linux (adjust for your OS)
+          curl -sSL "https://github.com/terraform-docs/terraform-docs/releases/download/v0.20.0/terraform-docs-v0.20.0-$(uname)-amd64.tar.gz" -o terraform-docs.tar.gz
+          tar -xzf terraform-docs.tar.gz
+          chmod +x terraform-docs
+          sudo mv terraform-docs /usr/local/bin/terraform-docs
+          terraform-docs --version
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
