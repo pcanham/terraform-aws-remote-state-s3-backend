@@ -9,7 +9,9 @@ locals {
   lock_key_id = "LockID"
 }
 
+#trivy:ignore:AVD-AWS-0025
 resource "aws_dynamodb_table" "lock" {
+  count        = var.create_dynamodb_table ? 1 : 0
   name         = var.dynamodb_table_name
   billing_mode = var.dynamodb_table_billing_mode
   hash_key     = local.lock_key_id
