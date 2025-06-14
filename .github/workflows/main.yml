@@ -42,7 +42,10 @@ jobs:
       - name: Cache pre-commit hooks
         uses: actions/cache@v4
         with:
-          path: ~/.cache/pre-commit
+          path: |
+            ~/.cache/pre-commit
+            /usr/local/bin/terraform-docs
+            /usr/local/bin/trivy
           key: ${{ runner.os }}-precommit-${{ hashFiles('.pre-commit-config.yaml') }}
       - name: Install pre-commit
         run: pip install pre-commit
