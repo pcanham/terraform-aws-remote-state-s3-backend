@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.2.0](https://github.com/pcanham/terraform-aws-remote-state-s3-backend/compare/v4.1.0...v4.2.0) (2025-06-14)
+
+
+### Features
+
+* dynamodb optional ([#31](https://github.com/pcanham/terraform-aws-remote-state-s3-backend/issues/31)) ([ac7d84d](https://github.com/pcanham/terraform-aws-remote-state-s3-backend/commit/ac7d84dee03323affa41c52c2cf4c733f3a3515b))
+
+
+### Bug Fixes
+
+* add delete permissions to tflock file ([9ca1d6a](https://github.com/pcanham/terraform-aws-remote-state-s3-backend/commit/9ca1d6aca038b95450778a500fe4864d6baebf32))
+
 ## [4.1.0](https://github.com/pcanham/terraform-aws-remote-state-s3-backend/compare/v4.0.1...v4.1.0) (2023-12-28)
 
 
