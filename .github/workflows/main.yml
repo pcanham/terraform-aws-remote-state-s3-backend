@@ -7,25 +7,21 @@ on:
 jobs:
   pre-commit-checks:
     name: Pre-commit checks
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - name: Install trivy
-        run: |
-          sudo wget https://github.com/aquasecurity/trivy/releases/download/v0.48.1/trivy_0.48.1_Linux-64bit.deb
-          sudo dpkg -i trivy_0.48.1_Linux-64bit.deb
       - name: Checkout
         uses: actions/checkout@v4
       - name: Terraform min/max versions
         id: minMax
-        uses: clowdhaus/terraform-min-max@v1.2.7
+        uses: clowdhaus/terraform-min-max@v1.3.2
       - name: Pre-commit Terraform ${{ steps.minMax.outputs.maxVersion }}
-        uses: clowdhaus/terraform-composite-actions/pre-commit@v1.8.3
+        uses: clowdhaus/terraform-composite-actions/pre-commit@v1.11.1
         with:
           terraform-version: ${{ steps.minMax.outputs.maxVersion }}
-          terraform-docs-version: v0.17.0
+          terraform-docs-version: v0.20.0
   validate-examples:
     name: Validate examples
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     defaults:
       run:
         shell: bash

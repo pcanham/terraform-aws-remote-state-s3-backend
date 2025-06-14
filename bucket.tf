@@ -8,6 +8,7 @@ data "aws_region" "state" {
 #---------------------------------------------------------------------------------------------------
 # KMS Key to Encrypt S3 Bucket
 #---------------------------------------------------------------------------------------------------
+
 #trivy:ignore:AVD-AWS-0025
 resource "aws_kms_key" "this" {
   description             = var.kms_key_description
