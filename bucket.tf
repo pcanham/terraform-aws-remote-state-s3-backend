@@ -112,7 +112,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "state" {
 resource "aws_s3_bucket_lifecycle_configuration" "state" {
   count  = local.define_lifecycle_rule ? 1 : 0
   bucket = aws_s3_bucket.state.id
-
+  filter {}  # Applies to all objects
   rule {
     id     = "auto-archive"
     status = "Enabled"
