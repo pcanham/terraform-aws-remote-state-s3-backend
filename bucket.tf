@@ -115,7 +115,7 @@ resource "aws_s3_bucket_lifecycle_configuration" "state" {
   rule {
     id     = "auto-archive"
     status = "Enabled"
-    filter {}  # Applies to all objects
+    filter {}
 
     dynamic "noncurrent_version_transition" {
       for_each = var.noncurrent_version_transitions
