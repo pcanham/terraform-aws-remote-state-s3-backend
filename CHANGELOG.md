@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.2.3](https://github.com/pcanham/terraform-aws-remote-state-s3-backend/compare/v4.2.2...v4.2.3) (2025-06-16)
+
+
+### Bug Fixes
+
+* update readme to show dynamodb is optional ([6e0c8da](https://github.com/pcanham/terraform-aws-remote-state-s3-backend/commit/6e0c8da353bf56c506e606b33cce080ca946be77))
+
 ## [4.2.2](https://github.com/pcanham/terraform-aws-remote-state-s3-backend/compare/v4.2.1...v4.2.2) (2025-06-16)
 
 
