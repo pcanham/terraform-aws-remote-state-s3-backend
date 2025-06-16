@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.2.1](https://github.com/pcanham/terraform-aws-remote-state-s3-backend/compare/v4.2.0...v4.2.1) (2025-06-16)
+
+
+### Bug Fixes
+
+* add in fix to s3 bucket filter ([2b928f1](https://github.com/pcanham/terraform-aws-remote-state-s3-backend/commit/2b928f1e330748a1256c1d35d7066f6c97935796))
+
 ## [4.2.0](https://github.com/pcanham/terraform-aws-remote-state-s3-backend/compare/v4.1.0...v4.2.0) (2025-06-14)
 
 
