@@ -10,4 +10,3 @@ repos:
       - id: terraform_trivy
         args:
           - --args=--skip-dirs=".devcontainer"
-      - id: terraform_docs
