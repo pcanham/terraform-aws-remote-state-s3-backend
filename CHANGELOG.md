@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.3.0](https://github.com/pcanham/terraform-aws-remote-state-s3-backend/compare/v4.2.4...v4.3.0) (2025-06-17)
+
+
+### Features
+
+* add terraform-docs into pre-commit ([3cd9894](https://github.com/pcanham/terraform-aws-remote-state-s3-backend/commit/3cd989439d7cf9899a5c5b0754bf1d9aed71e935))
+
+
+### Bug Fixes
+
+* removing terraform-docs, gh actions having issues ([47d78bb](https://github.com/pcanham/terraform-aws-remote-state-s3-backend/commit/47d78bbf29a86c4cba573c4e59dda182e9bb75fe))
+
 ## [4.2.4](https://github.com/pcanham/terraform-aws-remote-state-s3-backend/compare/v4.2.3...v4.2.4) (2025-06-17)
 
 
