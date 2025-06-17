@@ -52,6 +52,7 @@ resource "aws_iam_role" "replication" {
 
 #trivy:ignore:AVD-AWS-0057
 data "aws_iam_policy_document" "s3_replication" {
+  count = local.replication_role_count
   statement {
     actions = [
       "s3:GetReplicationConfiguration",
