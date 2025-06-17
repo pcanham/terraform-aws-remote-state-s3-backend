@@ -138,7 +138,7 @@ resource "aws_iam_policy" "replication" {
 
   name_prefix = var.override_iam_policy_name ? null : var.iam_policy_name_prefix
   name        = var.override_iam_policy_name ? var.iam_policy_name : null
-  policy      = data.aws_iam_policy_document.s3_replication.json
+  policy      = data.aws_iam_policy_document.s3_replication[0].json
 
   tags = var.tags
 }
