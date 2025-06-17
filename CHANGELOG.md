@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.2.4](https://github.com/pcanham/terraform-aws-remote-state-s3-backend/compare/v4.2.3...v4.2.4) (2025-06-17)
+
+
+### Bug Fixes
+
+* add in missing condition around replica creation ([d6570d2](https://github.com/pcanham/terraform-aws-remote-state-s3-backend/commit/d6570d2a4da2fcd1658bbd0166e8602b165b2a91))
+
 ## [4.2.3](https://github.com/pcanham/terraform-aws-remote-state-s3-backend/compare/v4.2.2...v4.2.3) (2025-06-16)
 
 
