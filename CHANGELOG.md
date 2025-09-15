@@ -179,7 +179,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.2.0](https://github.com/pcanham/terraform-aws-remote-state-s3-backend/compare/v2.1.1...v2.2.0) (2023-12-20)
 
-
 ### Features
 
 * upgrade actions ([#14](https://github.com/pcanham/terraform-aws-remote-state-s3-backend/issues/14)) ([6682c70](https://github.com/pcanham/terraform-aws-remote-state-s3-backend/commit/6682c70f93c37b470ac17e43e305b7951fa29248))
