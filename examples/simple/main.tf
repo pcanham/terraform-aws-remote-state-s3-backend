@@ -31,7 +31,23 @@ resource "aws_iam_user" "terraform" {
   name = "TerraformUser"
 }
 
+#trivy:ignore:AVD-AWS-0123
+resource "aws_iam_group" "terraform" {
+  name = "state"
+  path = "/service_accounts/"
+}
+
 resource "aws_iam_user_policy_attachment" "remote_state_access" {
-  user       = aws_iam_user.terraform.name
+  user       = aws_iam_group.terraform.name
   policy_arn = module.remote_state.terraform_iam_policy.arn
+}
+
+resource "aws_iam_group_membership" "state" {
+  name = "state_membership"
+
+  users = [
+    aws_iam_user.terraform.name,
+  ]
+
+  group = aws_iam_group.terraform.name
 }
