@@ -33,7 +33,7 @@ resource "aws_iam_user" "terraform" {
 
 #trivy:ignore:AVD-AWS-0123
 resource "aws_iam_group" "terraform" {
-  name = format("state_%s", random_string.random.id)
+  name = "state"
   path = "/service_accounts/"
 }
 
