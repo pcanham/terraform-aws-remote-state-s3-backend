@@ -19,14 +19,24 @@ data "aws_iam_policy_document" "terraform" {
   }
 
   statement {
-    actions = concat(
-      [
+    actions = [
+      "s3:GetObject",
+      "s3:PutObject"
+    ]
+    resources = ["${aws_s3_bucket.state.arn}/**/terraform.tfstate", "${aws_s3_bucket.state.arn}/**/tofu.tfstate"]
+  }
+
+
+  dynamic "statement" {
+    for_each = var.terraform_iam_policy_add_lockfile_permissions ? [1] : []
+    content {
+      actions = [
         "s3:GetObject",
-        "s3:PutObject"
-      ],
-      var.terraform_iam_policy_add_lockfile_permissions ? ["s3:DeleteObject"] : []
-    )
-    resources = ["${aws_s3_bucket.state.arn}/*"]
+        "s3:PutObject",
+        "s3:DeleteObject"
+      ]
+      resources = ["${aws_s3_bucket.state.arn}/**/terraform.tfstate.tflock", "${aws_s3_bucket.state.arn}/**/tofu.tfstate.tflock"]
+    }
   }
 
   dynamic "statement" {
